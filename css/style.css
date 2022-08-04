@@ -156,7 +156,43 @@ section{
     font-size: 1.5rem;
 }
 
+/* seção nossa instalação */
+.hearding{
+    text-align:center;
+    margin-bottom: 3rem;
+}
+.hearding img{
+    height: 4rem;
+    margin-top: 1rem;
+}
+.hearding h3{
+    font-size: 4rem;
+    color: var(--black);
+    font-family: 'Merienda One', cursive;
+}
+.facility .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap:1.5rem;
+    align-items: flex-start;
+}
+.facility .box-container .box{
+    text-align: center;
+}
+.facility .box-container .box img{
+    height: 10rem;
+    margin-bottom: .5rem;
+}
+.facility .box-container .box h3{
+    font-size: 3rem;
+    color:var(--black);
 
+}
+.facility .box-container .box p{
+    line-height: 2;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
 
 /* media queries */
 @media (max-width:991px){
@@ -214,5 +250,8 @@ section{
 
     html{
         font-size: 50%
+    }
+    .hearding h3{
+        font-size: 3rem;
     }
 }
