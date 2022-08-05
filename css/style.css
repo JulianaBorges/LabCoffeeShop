@@ -186,6 +186,7 @@ section{
 .facility .box-container .box h3{
     font-size: 3rem;
     color:var(--black);
+    margin: 1rem 0;
 
 }
 .facility .box-container .box p{
@@ -193,6 +194,41 @@ section{
     font-size: 1.5rem;
     color: var(--light-color);
 }
+
+/* secão menu */
+.menu .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    gap:2rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.menu .box-container .box{
+    text-align: center;
+}
+.menu .box-container .box img{
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.menu .box-container .box h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+
+/* seção galeria */
+.galeria .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    justify-content: center;
+}
+.galeria .box-container img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+
 
 /* media queries */
 @media (max-width:991px){
