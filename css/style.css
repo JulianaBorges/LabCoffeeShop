@@ -228,6 +228,26 @@ section{
     object-fit: cover;
 }
 
+/* seção contato */
+
+.equipe .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap:1.5rem;
+    justify-content: center;
+}
+.equipe .box-container .box{
+    text-align: center;
+}
+.equipe .box-container .box img{
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: .5rem;
+}
+.equipe .box-container .box h3{
+    font-size: 2rem;
+    color: var(--black);
+}
 
 
 /* media queries */
@@ -286,6 +306,9 @@ section{
 
     html{
         font-size: 50%
+    }
+    .hearding img{
+        height: 3rem;
     }
     .hearding h3{
         font-size: 3rem;
