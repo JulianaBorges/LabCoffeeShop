@@ -1,0 +1,28 @@
+php:
+  image: php:8.0-apache
+  container_name: php_cofe
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+  - ./app-poo:/var/www/html
+  links:
+  - db
+
+db:
+  image: mysql:latest 
+  container_name: banco_cofe
+  ports:
+    - "3306:3306"
+  volumes:
+    - /var/lib/mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+  
+phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1

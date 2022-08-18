@@ -1,3 +1,29 @@
+<?php
+$db_name = 'mysql:host=localhost;dbname=contato_db';
+$username = 'root';
+$password = 'root';
+
+$conn = new PDO($db_name, $username, $password);
+
+if(isset($_POST['send'])){
+    
+    $nome = $_post['nome'];
+    $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+    $telefone = $_post['telefone'];
+    $telefone = filter_var($telefone, FILTER_SANITIZE_STRING);
+    $convidados = $_post['convidados'];
+    $convidados = filter_var($convidados, FILTER_SANITIZE_STRING);
+
+    $select_contato = $conn->prepare("SELECT * FROM contato_form WHERE nome = ? AND telefone = ? AND convidados = ?");
+    $select_contato->execute([$nome, telefone, convidado]);
+
+    if($select_contato-.rowCount() > 0){
+        $messege[] = 'preencha o formulario';
+    }else{
+        $messege[] = 'formulario enviado com sucesso';
+    }    
+}
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -188,8 +214,8 @@
         </div>
         <form action="" method="post">
             <h3>Solicitar orçamento</h3>
-            <input type="text" name="name" class="box" maxlength="20" placeholder="Digite seu nome" required>
-            <input type="tel" nome="phone" class="box"  pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" minlength="9" maxlength="13" placeholder="tel: (11) 99999-9999">
+            <input type="text" name="nome" class="box" maxlength="20" placeholder="Digite seu nome" required>
+            <input type="tel" nome="telefone" class="box"  pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" minlength="9" maxlength="13" placeholder="tel: (11) 99999-9999">
             <input type="number" nome="convidados" class="box"  maxlength="2" placeholder="Quantidade de Convidados" min="0" max="99" onkeypress="if(this.valeu.length == 2) return false">
             <input type="submit" nome="send" value="Enviar Contato" class="btn">
         </form>
