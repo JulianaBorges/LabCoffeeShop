@@ -1,3 +1,29 @@
+
+<?php
+            $conn = mysqli_connect('db', 'root', 'root', 'sys') or die(mysqli_error());
+            echo "Banco conectado com Sucesso!";
+            $conn->close();
+
+
+// if(isset($_POST['send'])){
+    
+//     $nome = $_post['nome'];
+//     $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+//     $telefone = $_post['telefone'];
+//     $telefone = filter_var($telefone, FILTER_SANITIZE_STRING);
+//     $convidados = $_post['convidados'];
+//     $convidados = filter_var($convidados, FILTER_SANITIZE_STRING);
+
+//     $select_contato = $conn->prepare("SELECT * FROM contato_form WHERE nome = ? AND telefone = ? AND convidados = ?");
+//     $select_contato->execute([$nome, telefone, convidado]);
+
+//     if($select_contato->rowCount() > 0){
+//         $messege[] = 'preencha o formulario';
+//     }else{
+//         $messege[] = 'formulario enviado com sucesso';
+//     }    
+// }
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,14 +35,14 @@
     <!--font awesome cdn link-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- custom css file link -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
 
 </head>
 <body>
         <header class="header">
             <section class="flex">
-                <a href="#home" class="logo"><img src="images/logo.png" alt=""></a>
+                <a href="#home" class="logo"><img src="/assets/images/logo.png" alt=""></a>
                 <nav class="navbar">
                     <a href="#home">inicio</a>
                     <a href="#about">sobre</a>
@@ -184,12 +210,12 @@
     </div>
     <div class="row">
         <div class="image">
-            <img src="/images/contact-img.svg" alt="">
+            <img src="/public/assets/images/contact-img.svg" alt="">
         </div>
         <form action="" method="post">
             <h3>Solicitar orçamento</h3>
-            <input type="text" name="name" class="box" maxlength="20" placeholder="Digite seu nome" required>
-            <input type="tel" nome="phone" class="box"  pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" minlength="9" maxlength="13" placeholder="tel: (11) 99999-9999">
+            <input type="text" name="nome" class="box" maxlength="20" placeholder="Digite seu nome" required>
+            <input type="tel" nome="telefone" class="box"  pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" minlength="9" maxlength="13" placeholder="tel: (11) 99999-9999">
             <input type="number" nome="convidados" class="box"  maxlength="2" placeholder="Quantidade de Convidados" min="0" max="99" onkeypress="if(this.valeu.length == 2) return false">
             <input type="submit" nome="send" value="Enviar Contato" class="btn">
         </form>
@@ -231,6 +257,6 @@
     </div>
 </section>
 <!-- custom javaScrit file link--> 
-<script src="js/script.js"></script>
+<script src="assets/js/script.js"></script>
 </body>
 </html>
