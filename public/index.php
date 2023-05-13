@@ -1,0 +1,262 @@
+
+<?php
+            $conn = mysqli_connect('db', 'root', 'root', 'sys') or die(mysqli_error());
+            echo "Banco conectado com Sucesso!";
+            $conn->close();
+
+
+// if(isset($_POST['send'])){
+    
+//     $nome = $_post['nome'];
+//     $nome = filter_var($nome, FILTER_SANITIZE_STRING);
+//     $telefone = $_post['telefone'];
+//     $telefone = filter_var($telefone, FILTER_SANITIZE_STRING);
+//     $convidados = $_post['convidados'];
+//     $convidados = filter_var($convidados, FILTER_SANITIZE_STRING);
+
+//     $select_contato = $conn->prepare("SELECT * FROM contato_form WHERE nome = ? AND telefone = ? AND convidados = ?");
+//     $select_contato->execute([$nome, telefone, convidado]);
+
+//     if($select_contato->rowCount() > 0){
+//         $messege[] = 'preencha o formulario';
+//     }else{
+//         $messege[] = 'formulario enviado com sucesso';
+//     }    
+// }
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffe Shop</title>
+
+    <!--font awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+
+</head>
+<body>
+        <header class="header">
+            <section class="flex">
+                <a href="#home" class="logo"><img src="/assets/images/logo.png" alt=""></a>
+                <nav class="navbar">
+                    <a href="#home">inicio</a>
+                    <a href="#about">sobre</a>
+                    <a href="#menu">menu</a>
+                    <a href="#galeria">galeria</a>
+                    <a href="#contato">contato</a>
+                </nav>
+                <div id="menu-btn" class="fas fa-bars"></div>
+            </section>
+        </header>
+<!-- inicio da seção home -->
+<div class="home-bg">
+    <section class="home" id="home">
+        <div class="content">
+            <h3>paraíso do café</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi numquam at similique perspiciatis aliquam dolorem?</p>
+            <a href="#about" class="btn">sobre nós</a>
+        </div>
+    </section>
+</div>
+<!-- fim da seção home -->
+
+<!-- inicio da seção sobre -->
+<section class="about" id="about">
+    <div class="image">
+        <img src="/images/about-img.svg" alt="">
+    </div>
+    <div class="content">
+        <h3>Uma xícara de café pode completar o seu dia</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni nesciunt qui ad, 
+        ex deserunt adipisci facere cum odit quasi, voluptatum in laudantium minus incidunt
+        eius a. Tempore quod aperiam consequuntur!</p>
+        <a href="#menu" class="btn">Nosso cardápio</a>
+    </div>    
+</section>
+<!-- fim de seção sobre -->
+
+<!-- inicio da seção instalação -->
+<section class="facility">
+    <div class="hearding">
+        <img src="/images/heading-img.png" alt="">
+        <h3>Nossas instalações</h3>
+    </div>
+    
+    <div class="box-container">
+        <div class="box">
+            <img src="/images/icon-1.png" alt="">
+            <h3>variedades de café</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, enim.</p>
+        </div>
+       
+        <div class="box">
+            <img src="/images/icon-2.png" alt="">
+            <h3>grãos de café</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, consequuntur.</p>
+        </div>
+        
+        <div class="box">
+            <img src="/images/icon-3.png" alt="">
+            <h3>café da manhã e doces</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, quos.</p>
+        </div>  
+
+        <div class="box">
+            <img src="/images/icon-4.png" alt="">
+            <h3>ler para tomar café</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dicta. </p>
+        </div>  
+    </div>
+</section>
+<!-- fim da seção instalação -->
+
+<!-- inicio da seção cardapio -->
+<section class="menu" id="menu">
+    <div class="hearding">
+        <img src="/images/heading-img.png" alt="">
+        <h3>cardapio</h3>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img src="/images/menu-1.png" alt="">
+            <h3>Café com leite</h3>
+        </div>
+        <div class="box">
+            <img src="/images/menu-2.png" alt="">
+            <h3>Café com leite</h3>
+        </div>
+        <div class="box">
+            <img src="/images/menu-3.png" alt="">
+            <h3>Café com leite</h3>
+        </div>        
+        <div class="box">
+            <img src="/images/menu-4.png" alt="">
+            <h3>Café com leite</h3>
+        </div>
+        <div class="box">
+            <img src="/images/menu-5.png" alt="">
+            <h3>Café com leite</h3>
+        </div>
+        <div class="box">
+            <img src="/images/menu-6.png" alt="">
+            <h3>Café com leite</h3>
+        </div>
+</div>
+</section>
+<!-- fim da seção cardapio -->
+
+<!-- inicio da galeria -->
+<section class="galeria" id="galeria">
+    <div class="hearding">
+        <img src="/images/heading-img.png" alt="">
+        <h3>nossa galeria</h3>
+    </div>
+    <div class="box-container">
+        <img src="/images/gallery-1.webp" alt="">
+        <img src="/images/gallery-2.webp" alt="">
+        <img src="/images/gallery-3.webp" alt="">
+        <img src="/images/gallery-4.webp" alt="">
+        <img src="/images/gallery-5.webp" alt="">
+        <img src="/images/gallery-6.webp" alt="">
+    </div>
+</section>
+
+<!-- inicio da galeria/equipe  -->
+<section class="equipe">
+    <div class="hearding">
+        <img src="/images/heading-img.png" alt="">
+        <h3>nossa equipe</h3>
+    </div>
+
+    <div class="box-container">
+        <div class="box">
+            <img src="/images/our-team-1.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+        <div class="box">
+            <img src="/images/our-team-2.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+        <div class="box">
+            <img src="/images/our-team-3.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+        <div class="box">
+            <img src="/images/our-team-4.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+        <div class="box">
+            <img src="/images/our-team-5.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+        <div class="box">
+            <img src="/images/our-team-6.jpg" alt="">
+            <h3>Nome do copeiro</h3>
+        </div>
+    </div>    
+</section>
+ <!-- fim da seção galeria/equipe -->
+
+ <!-- incio da seção contato -->
+<section class="contato" id="contato">
+    <div class="hearding">
+        <img src="/images/heading-img.png" alt="">
+        <h3>contato</h3>
+    </div>
+    <div class="row">
+        <div class="image">
+            <img src="/public/assets/images/contact-img.svg" alt="">
+        </div>
+        <form action="" method="post">
+            <h3>Solicitar orçamento</h3>
+            <input type="text" name="nome" class="box" maxlength="20" placeholder="Digite seu nome" required>
+            <input type="tel" nome="telefone" class="box"  pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" minlength="9" maxlength="13" placeholder="tel: (11) 99999-9999">
+            <input type="number" nome="convidados" class="box"  maxlength="2" placeholder="Quantidade de Convidados" min="0" max="99" onkeypress="if(this.valeu.length == 2) return false">
+            <input type="submit" nome="send" value="Enviar Contato" class="btn">
+        </form>
+    </div>
+</section>
+
+<!-- inicio da seção footer -->
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <i class="fas fa-envelope"></i>
+                <h3>nosso email</h3>
+                <p>contato@cafeperfeito.com</p>
+                <p>orçamento@cafeperfeito.com</p>
+           
+        </div>
+        <div class="box">
+            <i class="fas fa-phone"></i>
+                <h3>telefone:</h3>
+                <p>(11)99999-5555</p>
+                <p>(11)98866-5577</p>
+            
+        </div>
+        <div class="box">
+            <i class="fas fa-clock"></i>
+                <h3>Horario de atendimento</h3>
+                <p>07h às 19h</p>
+            
+        </div>
+        <div class="box">
+            <i class="fas fa-map-marker-alt"></i>
+                <h3>Endereço</h3>
+                <p>sâo paulo, sp, brasil</p>
+            
+        </div>
+    </div>
+    <div class="credit"> &copy;copyright@2022 by <span>Juliana Borges</span> | allrights reserved! 
+    </div>
+</section>
+<!-- custom javaScrit file link--> 
+<script src="assets/js/script.js"></script>
+</body>
+</html>
