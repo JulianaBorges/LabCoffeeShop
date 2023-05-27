@@ -1,7 +1,7 @@
 <?php
 $db_name = 'mysql:host=localhost;dbname=contato_db';
 $username = 'root';
-$password = 'root';
+$password = '';
 
 $conn = new PDO($db_name, $username, $password);
 
